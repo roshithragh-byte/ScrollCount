@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@color/midnight_navy_elevated"
+    android:padding="20dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SELECT FOCUS STREAK CHALLENGE"
+        android:textColor="@color/mint_teal"
+        android:textSize="11sp"
+        android:letterSpacing="0.12"
+        android:textStyle="bold"
+        android:layout_marginBottom="6dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Earn a Scratch Card every 7 days!"
+        android:textColor="@color/text_white"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="14dp" />
+
+    <RadioGroup
+        android:id="@+id/rg_challenge_presets"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp">
+
+        <RadioButton
+            android:id="@+id/rb_7_days"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="7 Days (1 Week) — Focus Starter"
+            android:textColor="@color/text_white"
+            android:buttonTint="@color/mint_teal" />
+
+        <RadioButton
+            android:id="@+id/rb_21_days"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="21 Days (3 Weeks) — Dopamine Rewire"
+            android:textColor="@color/text_white"
+            android:buttonTint="@color/mint_teal" />
+
+        <RadioButton
+            android:id="@+id/rb_28_days"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="1 Month (28 Days / 4 Weeks) — Full Reset"
+            android:textColor="@color/text_white"
+            android:buttonTint="@color/mint_teal" />
+
+        <RadioButton
+            android:id="@+id/rb_50_days"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="50 Days (7 Weeks + 1) — Deep Discipline"
+            android:textColor="@color/text_white"
+            android:buttonTint="@color/mint_teal" />
+
+        <RadioButton
+            android:id="@+id/rb_100_days"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="100 Days (14 Weeks + 2) — Centurion"
+            android:textColor="@color/text_white"
+            android:buttonTint="@color/mint_teal" />
+
+        <RadioButton
+            android:id="@+id/rb_custom_days"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Custom Streak (Multiple of 7 Days)"
+            android:textColor="@color/coral_accent"
+            android:buttonTint="@color/coral_accent" />
+    </RadioGroup>
+
+    <!-- Custom Multiples-of-7 Container -->
+    <LinearLayout
+        android:id="@+id/layout_custom_weeks"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/bg_floating_drawer_card"
+        android:padding="12dp"
+        android:layout_marginBottom="16dp"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/tv_custom_weeks_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Custom Duration: 5 Weeks (35 Days)"
+            android:textColor="@color/mint_teal"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp" />
+
+        <SeekBar
+            android:id="@+id/seekbar_custom_weeks"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:min="1"
+            android:max="20"
+            android:progress="5"
+            android:thumbTint="@color/mint_teal"
+            android:progressTint="@color/mint_teal" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_save_challenge"
+        style="@style/Widget.Material3.Button.TonalButton"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:text="Start Challenge"
+        android:textColor="@color/midnight_navy"
+        android:textStyle="bold"
+        app:backgroundTint="@color/mint_teal" />
+</LinearLayout>

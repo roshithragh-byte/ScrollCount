@@ -53,7 +53,7 @@
                 android:id="@+id/tv_version_nda_badge"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="v1.4 • NDA Pending"
+                android:text="v1.5 • Streaks"
                 android:textColor="@color/mint_teal"
                 android:textStyle="bold"
                 android:textSize="11sp" />
@@ -230,6 +230,127 @@
                     android:progress="0"
                     android:max="30"
                     android:progressTint="@color/mint_teal" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- FOCUS STREAKS & SCRATCH CARD REWARDS CARD -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            app:cardBackgroundColor="@color/midnight_navy_elevated"
+            app:cardCornerRadius="20dp"
+            app:strokeColor="@color/coral_accent_alpha20"
+            app:strokeWidth="1.5dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="18dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="10dp">
+
+                    <ImageView
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:src="@drawable/ic_flame_streak"
+                        android:contentDescription="Streak Flame"
+                        android:layout_marginEnd="10dp" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tv_streak_days"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0-Day Focus Streak"
+                            android:textColor="@color/text_white"
+                            android:textSize="17sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tv_streak_challenge_label"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Active: 7-Day Focus Starter • Best: 0d"
+                            android:textColor="@color/text_muted_slate"
+                            android:textSize="11sp" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tv_streak_freezes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1 Freeze"
+                        android:textColor="@color/mint_teal"
+                        android:textSize="11sp"
+                        android:textStyle="bold"
+                        android:paddingStart="10dp"
+                        android:paddingEnd="10dp"
+                        android:paddingTop="4dp"
+                        android:paddingBottom="4dp"
+                        android:background="@drawable/bg_floating_pill_badge" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tv_streak_milestone_sub"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0 / 7 Days • 7 days to Bronze Scratch Card"
+                    android:textColor="@color/mint_teal"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="6dp" />
+
+                <ProgressBar
+                    android:id="@+id/progress_streak_milestone"
+                    style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="8dp"
+                    android:max="7"
+                    android:progress="0"
+                    android:progressTint="@color/coral_accent"
+                    android:layout_marginBottom="14dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/btn_choose_challenge"
+                        style="@style/Widget.Material3.Button.OutlinedButton"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_weight="1"
+                        android:text="Set Challenge"
+                        android:textSize="11sp"
+                        android:textColor="@color/text_white"
+                        app:strokeColor="@color/midnight_navy_border"
+                        android:layout_marginEnd="8dp" />
+
+                    <Button
+                        android:id="@+id/btn_open_scratch_card"
+                        style="@style/Widget.Material3.Button.TonalButton"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_weight="1.2"
+                        android:text="Scratch Card (0)"
+                        android:textSize="11sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/midnight_navy"
+                        app:backgroundTint="@color/mint_teal" />
+                </LinearLayout>
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 

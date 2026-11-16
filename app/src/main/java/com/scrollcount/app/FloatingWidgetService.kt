@@ -34,6 +34,7 @@ class FloatingWidgetService : Service() {
         const val EXTRA_COUNT = "extra_count"
         const val EXTRA_PACKAGE_NAME = "extra_package_name"
         const val EXTRA_LIMIT_REACHED = "extra_limit_reached"
+        const val EXTRA_STREAK_AT_RISK = "extra_streak_at_risk"
 
         private const val NOTIFICATION_CHANNEL_ID = "scrollcount_overlay_channel"
         private const val NOTIFICATION_ID = 1001
@@ -194,8 +195,14 @@ class FloatingWidgetService : Service() {
                 val limitReached = intent.getBooleanExtra(EXTRA_LIMIT_REACHED, false) ||
                     (count >= prefsManager.dailyLimit)
                 updateWidgetUI(count)
+                val streakAtRisk = intent.getBooleanExtra(EXTRA_STREAK_AT_RISK, false)
                 if (limitReached) {
                     onLimitReachedPopup(count)
+                } else if (streakAtRisk) {
+                    floatingView?.findViewById<TextView>(R.id.tv_widget_subtitle)?.apply {
+                        text = "RISK!"
+                        setTextColor(getColor(R.color.amber_gold))
+                    }
                 }
             }
             ACTION_FORCE_SHOW -> {

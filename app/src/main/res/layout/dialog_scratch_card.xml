@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@color/midnight_navy_elevated"
+    android:padding="20dp">
+
+    <TextView
+        android:id="@+id/tv_scratch_tier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="BRONZE TIER REWARD"
+        android:textColor="@color/mint_teal"
+        android:textSize="11sp"
+        android:letterSpacing="0.14"
+        android:textStyle="bold"
+        android:layout_marginBottom="4dp" />
+
+    <TextView
+        android:id="@+id/tv_scratch_subtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="7-Day Focus Milestone Unlocked"
+        android:textColor="@color/text_white"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Scratch Card Container -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="190dp"
+        android:background="@drawable/bg_floating_drawer_card"
+        android:layout_marginBottom="16dp">
+
+        <!-- Underlying Coupon Reward -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/tv_reward_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="20% Off Annual Pro + Freeze"
+                android:textColor="@color/text_white"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:id="@+id/tv_coupon_code"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SCROLL20"
+                android:textColor="@color/mint_teal"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:letterSpacing="0.15"
+                android:padding="8dp"
+                android:background="@color/midnight_navy" />
+        </LinearLayout>
+
+        <!-- Interactive Scratch Foil -->
+        <com.scrollcount.app.ScratchCardView
+            android:id="@+id/scratch_card_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </FrameLayout>
+
+    <Button
+        android:id="@+id/btn_copy_coupon"
+        style="@style/Widget.Material3.Button.TonalButton"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:text="Copy Coupon Code"
+        android:textColor="@color/midnight_navy"
+        android:textStyle="bold"
+        app:backgroundTint="@color/mint_teal"
+        android:enabled="false"
+        android:alpha="0.5"
+        android:layout_marginBottom="8dp" />
+
+    <Button
+        android:id="@+id/btn_close_scratch"
+        style="@style/Widget.Material3.Button.OutlinedButton"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="Close"
+        android:textColor="@color/text_muted_slate"
+        app:strokeColor="@color/midnight_navy_border" />
+</LinearLayout>

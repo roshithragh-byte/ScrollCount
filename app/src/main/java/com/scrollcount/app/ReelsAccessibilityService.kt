@@ -35,6 +35,7 @@ class ReelsAccessibilityService : AccessibilityService() {
     }
 
     private lateinit var prefsManager: PreferencesManager
+    private lateinit var streakManager: StreakManager
     private var lastScrollTime = 0L
     private var currentForegroundPackage = ""
     private var lastShortSignature: String? = null
@@ -42,6 +43,7 @@ class ReelsAccessibilityService : AccessibilityService() {
     override fun onCreate() {
         super.onCreate()
         prefsManager = PreferencesManager(this)
+        streakManager = StreakManager(this)
     }
 
     override fun onAccessibilityEvent(event: AccessibilityEvent?) {
@@ -193,6 +195,7 @@ class ReelsAccessibilityService : AccessibilityService() {
         if (now - lastScrollTime < DEBOUNCE_INTERVAL_MS) return
         lastScrollTime = now
         val newCount = prefsManager.incrementCount(packageName)
+        streakManager.syncCurrentDayCount(newCount)
         val limit = prefsManager.dailyLimit
         Log.i(TAG, "[$packageName] Counted via $reason! Today Total: $newCount / Goal: $limit")
 
@@ -201,6 +204,8 @@ class ReelsAccessibilityService : AccessibilityService() {
             putExtra(FloatingWidgetService.EXTRA_COUNT, newCount)
             if (newCount >= limit) {
                 putExtra(FloatingWidgetService.EXTRA_LIMIT_REACHED, true)
+            } else if (streakManager.isStreakAtRisk(newCount, limit)) {
+                putExtra(FloatingWidgetService.EXTRA_STREAK_AT_RISK, true)
             }
         }
         startService(intent)
