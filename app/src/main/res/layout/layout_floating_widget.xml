@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/widget_pill"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_floating_pill_badge"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="12dp"
+        android:paddingTop="6dp"
+        android:paddingEnd="12dp"
+        android:paddingBottom="6dp"
+        android:elevation="16dp">
+
+        <ImageView
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:src="@drawable/ic_badge_play_ring"
+            android:contentDescription="ScrollCount Play Gauge"
+            android:layout_marginEnd="10dp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="start">
+
+            <TextView
+                android:id="@+id/tv_widget_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textColor="@color/white"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:includeFontPadding="false" />
+
+            <TextView
+                android:id="@+id/tv_widget_subtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TODAY"
+                android:textColor="@color/mint_teal"
+                android:textSize="9sp"
+                android:textStyle="bold"
+                android:letterSpacing="0.18"
+                android:includeFontPadding="false" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="26dp"
+            android:background="@color/midnight_navy_border"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="8dp" />
+
+        <ImageView
+            android:id="@+id/btn_pill_chevron"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:src="@drawable/ic_chevron_up"
+            android:contentDescription="Expand Quick Stats"
+            android:layout_marginEnd="6dp" />
+
+        <TextView
+            android:id="@+id/btn_pill_minimize"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:gravity="center"
+            android:text="—"
+            android:textColor="@color/text_muted_slate"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:contentDescription="Minimize Badge" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/widget_drawer"
+        android:layout_width="260dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/bg_floating_drawer_card"
+        android:elevation="20dp"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:visibility="gone">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp">
+
+            <TextView
+                android:id="@+id/tv_drawer_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ScrollCount Live"
+                android:textColor="@color/text_white"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/btn_drawer_minimize"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:gravity="center"
+                    android:text="—"
+                    android:textColor="@color/mint_teal"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:layout_marginEnd="8dp"
+                    android:contentDescription="Minimize until limit reached" />
+
+                <TextView
+                    android:id="@+id/btn_close_drawer"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:gravity="center"
+                    android:text="✕"
+                    android:textColor="@color/coral_accent"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:contentDescription="Close widget" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_limit_alert_banner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="⚠️ DAILY REEL LIMIT REACHED!"
+            android:textColor="@color/white"
+            android:background="@drawable/bg_floating_pill_badge"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:padding="6dp"
+            android:layout_marginBottom="10dp"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="6dp">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Today's Total:"
+                android:textColor="@color/text_muted_slate"
+                android:textSize="12sp" />
+            <TextView
+                android:id="@+id/tv_drawer_total"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textColor="@color/mint_teal"
+                android:textStyle="bold"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="4dp">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="YouTube Shorts:"
+                android:textColor="@color/text_muted_slate"
+                android:textSize="11sp" />
+            <TextView
+                android:id="@+id/tv_drawer_yt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textColor="@color/text_white"
+                android:textSize="11sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="4dp">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Instagram Reels:"
+                android:textColor="@color/text_muted_slate"
+                android:textSize="11sp" />
+            <TextView
+                android:id="@+id/tv_drawer_ig"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textColor="@color/text_white"
+                android:textSize="11sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="4dp">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Facebook Reels:"
+                android:textColor="@color/text_muted_slate"
+                android:textSize="11sp" />
+            <TextView
+                android:id="@+id/tv_drawer_fb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textColor="@color/text_white"
+                android:textSize="11sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="4dp">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Snapchat Spotlight:"
+                android:textColor="@color/text_muted_slate"
+                android:textSize="11sp" />
+            <TextView
+                android:id="@+id/tv_drawer_snap"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textColor="@color/text_white"
+                android:textSize="11sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="10dp">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Estimated Time Lost:"
+                android:textColor="@color/text_muted_slate"
+                android:textSize="12sp" />
+            <TextView
+                android:id="@+id/tv_drawer_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0m"
+                android:textColor="@color/coral_accent"
+                android:textStyle="bold"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <ProgressBar
+            android:id="@+id/progress_drawer"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="6dp"
+            android:progress="0"
+            android:max="30"
+            android:progressTint="@color/mint_teal"
+            android:layout_marginBottom="14dp" />
+
+        <Button
+            android:id="@+id/btn_action_minimize"
+            style="@style/Widget.Material3.Button.TonalButton"
+            android:layout_width="match_parent"
+            android:layout_height="38dp"
+            android:text="Minimize (Show Only At Limit)"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            android:textColor="@color/midnight_navy"
+            app:backgroundTint="@color/mint_teal"
+            android:layout_marginBottom="6dp" />
+
+        <Button
+            android:id="@+id/btn_action_close_session"
+            style="@style/Widget.Material3.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="38dp"
+            android:text="Close for Now"
+            android:textSize="11sp"
+            android:textColor="@color/coral_accent"
+            app:strokeColor="@color/coral_accent" />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ScrollCount</string>
+    <string name="accessibility_service_description">ScrollCount uses Accessibility Services solely to detect when you scroll through short-form video feeds (Reels, Shorts, Spotlight) in order to display your live watch tally on your screen. No video content, keystrokes, or private data are ever recorded or transmitted.</string>
+</resources>

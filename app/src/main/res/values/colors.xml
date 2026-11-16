@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="midnight_navy">#101827</color>
+    <color name="midnight_navy_elevated">#161F30</color>
+    <color name="midnight_navy_card">#1B263B</color>
+    <color name="midnight_navy_border">#26354D</color>
+    <color name="mint_teal">#48E0C1</color>
+    <color name="mint_teal_dark">#2BC4A5</color>
+    <color name="mint_teal_alpha20">#3348E0C1</color>
+    <color name="coral_accent">#FF766E</color>
+    <color name="coral_accent_alpha20">#33FF766E</color>
+    <color name="amber_gold">#F59E0B</color>
+    <color name="amber_gold_alpha20">#33F59E0B</color>
+    <color name="text_white">#F8FAFC</color>
+    <color name="text_off_white">#F6F7F4</color>
+    <color name="text_muted_slate">#94A3B8</color>
+    <color name="text_dark">#101827</color>
+    <color name="colorPrimary">@color/mint_teal</color>
+    <color name="colorSecondary">@color/coral_accent</color>
+    <color name="colorSurface">@color/midnight_navy_elevated</color>
+    <color name="colorBackground">@color/midnight_navy</color>
+    <color name="accent_red">@color/coral_accent</color>
+    <color name="accent_green">@color/mint_teal</color>
+    <color name="white">#FFFFFF</color>
+</resources>
